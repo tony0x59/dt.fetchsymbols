@@ -1,7 +1,8 @@
 # dt.fetchsymbols
 com.apple.dt.fetchsymbols client.
 # build
-xcrun -sdk macosx clang -F/System/Library/PrivateFrameworks -framework MobileDevice -framework CoreFoundation main.c -o fetchsymbols
+cp -r /System/Library/PrivateFrameworks/MobileDevice.framework ./
+xcrun -sdk macosx clang -F`pwd` -framework MobileDevice -framework CoreFoundation main.c -o fetchsymbols
 # usage
 fetchsymbols [Options]
 
